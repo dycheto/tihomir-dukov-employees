@@ -1,14 +1,11 @@
 import { sortByProjectId } from '../utils/sortByProjectId';
 import { v4 } from 'uuid';
 
-const ResultTable = ({ employeesData }) => {
+export default function ResultTable({
+    employeesData
+}) {
 
     const employeesPairs = sortByProjectId(employeesData);
-
-    let employee1ID = "";
-    let employee2ID = "";
-    let projectID = "";
-    let daysWorked = "";
 
     if (employeesPairs.length === 0) {
         return (
@@ -17,10 +14,9 @@ const ResultTable = ({ employeesData }) => {
             </div>
         )
     }
-
     return (
         <div className='table-container'>
-            <h2 >Employee ID #{employee1ID} and Employee ID #{employee2ID} worked together for the most days.</h2>
+            <h2>Common projects of the pair.</h2>
             <table className='table'>
                 <thead>
                     <tr className='header'>
@@ -41,10 +37,9 @@ const ResultTable = ({ employeesData }) => {
                             </tr>
                         ))
                     }
+
                 </tbody>
             </table>
         </div>
     );
 };
-
-export default ResultTable;

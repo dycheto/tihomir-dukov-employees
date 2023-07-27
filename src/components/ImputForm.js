@@ -1,4 +1,3 @@
-
 export default function ImputForm({
     handleOnChange,
     handleOnSubmit
@@ -6,7 +5,7 @@ export default function ImputForm({
 
     return (
         <div className="form-container">
-            <form>
+            <form className="import-form">
                 <input
                     type="file"
                     id="csvFileInput"

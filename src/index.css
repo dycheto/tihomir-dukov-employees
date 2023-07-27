@@ -1,7 +1,8 @@
-.header-container{
+.header-container {
   border-bottom: 1px solid black;
 }
-.title{
+
+.title {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,9 +10,10 @@
 
 .form-container {
   max-width: 760px;
+  height: 100px;
   overflow: auto;
-  margin: 20px auto; 
-  padding: 20px;
+  margin: 10px auto;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
@@ -39,7 +41,6 @@
 
 .table-container {
   max-width: 800px;
-  height: 400px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -53,10 +54,10 @@
   table-layout: fixed;
 }
 
-.table tbody{
+.table tbody {
   display: flex;
   flex-direction: column;
-  max-height: 350px; 
+  max-height: 300px;
   overflow-y: auto;
 }
 
