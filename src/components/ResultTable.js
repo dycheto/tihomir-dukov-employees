@@ -14,6 +14,7 @@ export default function ResultTable({
             </div>
         )
     }
+    
     return (
         <div className='table-container'>
             <h2>Common projects of the pair.</h2>

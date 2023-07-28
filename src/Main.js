@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Papa from 'papaparse';
+import { parseCSVData } from './utils/parseCSVData';
 import Table from "./components/Table";
 import ImputForm from "./components/ImputForm";
 import ResultTable from "./components/ResultTable";
@@ -16,28 +16,18 @@ export default function Main() {
         setFile(file);
     };
 
-    const parseCSVData = (csvString) => {
-        Papa.parse(csvString, {
-            header: true,
-            complete: (results) => {
-                setEmployees(results.data);
-            },
-            error: (error) => {
-                console.error('Error parsing CSV:', error);
-            },
-        });
-    };
-
     const handleOnSubmit = (e) => {
         e.preventDefault();
 
-        if (file) {
+        if (file && file.type === "text/csv") {
             fileReader.onload = function (event) {
                 const text = event.target.result;
-                parseCSVData(text);
+                parseCSVData(text, setEmployees);
             };
 
             fileReader.readAsText(file);
+        } else {
+            alert(`You are uploading unsupported file. Only CSV files are supported!`);
         }
     };
 
