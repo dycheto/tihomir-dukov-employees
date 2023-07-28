@@ -19,6 +19,7 @@ export default function Main() {
     const handleOnSubmit = (e) => {
         e.preventDefault();
 
+        // validates the type of the input file
         if (file && file.type === "text/csv") {
             fileReader.onload = function (event) {
                 const text = event.target.result;
@@ -31,6 +32,7 @@ export default function Main() {
         }
     };
 
+    //take the keys of the provided object and returns them in array
     const headerKeys = Object.keys(Object.assign({}, ...employees));
 
     return (
