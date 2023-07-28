@@ -4,14 +4,13 @@ The object takes the ProjectId as keys and set the pair of employees that work o
 that contains the whole information about each employee.
 */
 
-import { setTodaysDate } from "./setTodaysDate";
 
 export function getEmployeePairs(employeesData) {
     const employeesPairsInCommonProject = {};
 
     employeesData.forEach(employee => {
         if (employee.DateTo === "null") {
-            employee.DateTo = setTodaysDate();
+            employee.DateTo = new Date();
         }
         const { EmpID, ProjectID, DateFrom, DateTo } = employee;
 

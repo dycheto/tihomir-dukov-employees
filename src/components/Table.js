@@ -1,5 +1,4 @@
 import { v4 } from 'uuid';
-import {setTodaysDate} from '../utils/setTodaysDate';
 
 export default function Table({
     headerKeys,
@@ -20,7 +19,7 @@ export default function Table({
                         <tr key={v4()}>
                             {Object.values(employee).map((val) => {
                                 if (val === "null") {
-                                    val = setTodaysDate();
+                                    val = new Date().toISOString().slice(0,10);
                                 }
                                 return <td key={v4()}>{val}</td>
                             })}

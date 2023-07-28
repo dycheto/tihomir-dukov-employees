@@ -12,7 +12,7 @@ export function calculateDaysWorkedTogether(employeesPair) {
 
         // we calculate the total days of working together
         const durationInMs = overlapEndDate - overlapStartDate;
-        const durationInDays = durationInMs / (1000 * 60 * 60 * 24);
+        const durationInDays = Math.round(durationInMs / (1000 * 60 * 60 * 24));
 
         if (i === 0) {
             pair = {
