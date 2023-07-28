@@ -1,3 +1,5 @@
+// when DateTo is null, this method returns todays date formated yyyy-mm-dd
+
 export function formatDate(date = new Date()) {
     let year = date.toLocaleString('default', { year: 'numeric' }).slice(0, 4);
 

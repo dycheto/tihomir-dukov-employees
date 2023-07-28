@@ -80,3 +80,26 @@
   padding: 12px 8px;
   text-align: left;
 }
+
+.page-not-found-wrapper {
+  display: flex;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto auto 550px auto;
+}
+
+.page-not-found h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.page-not-found p {
+  font-size: 1.5rem;
+  color: #888;
+}
