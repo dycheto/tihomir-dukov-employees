@@ -14,7 +14,7 @@ export default function ResultTable({
             </div>
         )
     }
-    
+
     return (
         <div className='table-container'>
             <h2>Common projects of the pair.</h2>
@@ -38,7 +38,6 @@ export default function ResultTable({
                             </tr>
                         ))
                     }
-
                 </tbody>
             </table>
         </div>
