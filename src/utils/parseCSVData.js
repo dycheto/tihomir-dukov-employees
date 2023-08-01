@@ -9,6 +9,8 @@ export function parseCSVData(csvString, setEmployees) {
     Papa.parse(csvString, {
         header: true,
         complete: (results) => {
+            //removes unwanted bug element in the array
+            results.data.pop();
             setEmployees(results.data);
         },
         error: (error) => {
