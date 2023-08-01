@@ -4,9 +4,10 @@ The object takes the ProjectId as keys and set the pair of employees that work o
 that contains the whole information about each employee.
 */
 
-
+// upgraded function
 export function getEmployeePairs(employeesData) {
     const employeesPairsInCommonProject = {};
+
 
     employeesData.forEach(employee => {
         if (employee.DateTo === "null") {
@@ -17,7 +18,11 @@ export function getEmployeePairs(employeesData) {
         if (!employeesPairsInCommonProject[ProjectID]) {
             employeesPairsInCommonProject[ProjectID] = [];
         }
-        employeesPairsInCommonProject[ProjectID].push({ EmpID, ProjectID, DateFrom, DateTo });
+
+        if (!employeesPairsInCommonProject[ProjectID][EmpID]) {
+            employeesPairsInCommonProject[ProjectID][EmpID] = [];
+        }
+        employeesPairsInCommonProject[ProjectID][EmpID].push([DateFrom, DateTo]);
     });
 
     return employeesPairsInCommonProject;
